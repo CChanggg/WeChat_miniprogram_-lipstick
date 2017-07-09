@@ -1,0 +1,25 @@
+<!--pages/list/list.wxml-->
+<!-- <view class="picture">
+      <image class="imgClass" model="aspectFit" bindload="imageLoad" src="/image/picture.png"></image>
+    </view> -->
+<scroll-view scroll-y style="height: {{windowHeight}}" scroll-into-view="{{alpha}}">
+  <view class="brand">
+    <view class="brand-list">
+      <view wx:for="{{list}}" wx:key="unique" id="{{item.brand}}" class="section-item" wx:if="{{index!=0}}">
+        <view class="section-item-header">
+          {{item.brand}}
+        </view>
+        <view wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+          <view class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}">
+            <text>{{cell}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view data-id="selector" catchtouchstart="handlerBrandTap" catchtouchmove="handlerMove" class="brand-selector">
+  <view data-ap="{{item.brand}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
+    {{item.brand}}
+  </view>
+</view>

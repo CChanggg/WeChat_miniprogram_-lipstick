@@ -1,0 +1,12 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <view class="brand" wx:for="{{brandArray}}" wx:for-item="item">
+    <view class="brand_img">{{item.img}} </view>
+    <view class="brand__name">{{item.name}}</view>
+    <view class="brand__price">{{item.price}}</view>
+    <view class="brand_detail">{{item.detail}}</view>
+  </view>
+  <view class="detail">
+    <button type="defaule" bindtap="clickButton">{{brand-detail_name}}</button>
+  </view>
+</view>
